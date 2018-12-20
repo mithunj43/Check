@@ -12,7 +12,7 @@ public class StudentController {
         return "Focus and Finish";
     }
 
-    @GetMapping("read")
+    @GetMapping("reading")
     public String read(){
         return "Read";
     }
