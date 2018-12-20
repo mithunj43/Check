@@ -11,4 +11,9 @@ public class StudentController {
     public String getData(){
         return "Focus and Finish";
     }
+
+    @GetMapping("read")
+    public String read(){
+        return "Read";
+    }
 }
