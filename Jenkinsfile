@@ -1,4 +1,4 @@
-pipeline{
+node{
     agent any
     stages{
         stage('clean stage'){
@@ -11,6 +11,7 @@ pipeline{
         stage('build stage'){
             steps{
                 withMaven(maven:'maven'){
+                    sh 'pwd'
                     sh 'mvn install -DskipTests'
                 }
             }
