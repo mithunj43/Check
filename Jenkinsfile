@@ -10,14 +10,22 @@ pipeline{
         }
         stage('build stage'){
             steps{
-                dir('target'){
-                    def app = docker.build "localhost:5000/account-service:${env.version}"
-                }
                 withMaven(maven:'maven'){
                     sh 'pwd'
                     sh 'mvn install -DskipTests'
                 }
             }
         }
+        stage('build image'){
+              steps{
+                  dir('target'){
+                      def app = docker.build "localhost:5000/account-service:${env.version}"
+                  }
+
+              }
+        }
     }
 }
+
+
+
