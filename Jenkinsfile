@@ -9,10 +9,10 @@ pipeline{
             }
         }
         stage('build stage'){
-            dir('target'){
-                def app = docker.build "localhost:5000/account-service:${env.version}"
-             }
             steps{
+                dir('target'){
+                    def app = docker.build "localhost:5000/account-service:${env.version}"
+                }
                 withMaven(maven:'maven'){
                     sh 'pwd'
                     sh 'mvn install -DskipTests'
