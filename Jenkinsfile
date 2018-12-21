@@ -1,11 +1,16 @@
 pipeline{
     agent any
     stages{
-        stage('Compile stage'){
+        stage('clean stage'){
             steps{
                  withMaven(maven:'maven'){
-                    sh 'mvn clean compile'
+                    sh 'mvn clean'
                  }
+            }
+        }
+        stage('build stage'){
+            withMaven(maven:'maven'){
+                sh 'mvn install -DskipTests'
             }
         }
     }
