@@ -9,8 +9,10 @@ pipeline{
             }
         }
         stage('build stage'){
-            withMaven(maven:'maven'){
-                sh 'mvn install -DskipTests'
+            steps{
+                withMaven(maven:'maven'){
+                    sh 'mvn install -DskipTests'
+                }
             }
         }
     }
