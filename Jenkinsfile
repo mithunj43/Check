@@ -10,6 +10,6 @@ node{
         sh "mvn install -DskipTests"
     }
     stage('build docker image'){
-        sh 'docker image build -t mithunj43/check'
+        sh 'docker  build -t mithunj43/check .'
     }
 }
