@@ -12,4 +12,7 @@ node{
     stage('build docker image'){
         sh 'docker  build -t mithunj43/check .'
     }
+    stage('push docker image to hub'){
+        sh 'docker push mithunj43/check:0.0.1'
+    }
 }
