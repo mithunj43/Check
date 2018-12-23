@@ -10,9 +10,9 @@ node{
         sh "mvn install -DskipTests"
     }
     stage('build docker image'){
-        sh 'docker  build -t mithunj43/check .'
+        sh 'docker  build -t mithunj43/check:checktag .'
     }
     stage('push docker image to hub'){
-        sh 'docker push mithunj43/check:0.0.1'
+        sh 'docker push mithunj43/check:checktag'
     }
 }
